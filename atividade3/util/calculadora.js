@@ -8,7 +8,7 @@ const dividir = (a, b) => {
     return a/b;
 };
 
-MediaSourceHandle.exports = {
+module.exports = {
     somar, 
     subtrair, 
     multiplicar, 
