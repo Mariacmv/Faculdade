@@ -2,15 +2,15 @@ const somar = (a, b) => a + b;
 const subtrair = (a, b) => a - b;
 const multiplicar = (a, b) => a * b;
 const dividir = (a, b) => {
-    if (b == 0){
+    if (b == 0) {
         return 'ERRO: divisão por zero não é permitida';
     }
-    return a/b;
+    return a / b;
 };
 
-MediaSourceHandle.exports = {
-    somar, 
-    subtrair, 
-    multiplicar, 
+module.exports = {
+    somar,
+    subtrair,
+    multiplicar,
     dividir
 };
