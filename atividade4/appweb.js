@@ -54,7 +54,7 @@ app.get('/editar/:id/:qtd', (req, res) => {
 
 app.get('/', (req, res) => {
     res.send(`
-        <h1>Bem-vinda ao Estoque!</h1>
+        <h1>Bem-vindo ao Estoque!</h1>
         <p>Use as rotas:</p>
         <ul>
             <li>/adicionar/:id/:nome/:qtd</li>
