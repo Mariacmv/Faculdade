@@ -1,0 +1,15 @@
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\bin\Debug\net9.0\.NET.exe
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\bin\Debug\net9.0\.NET.deps.json
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\bin\Debug\net9.0\.NET.runtimeconfig.json
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\bin\Debug\net9.0\.NET.dll
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\bin\Debug\net9.0\.NET.pdb
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\obj\Debug\net9.0\.NET.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\obj\Debug\net9.0\.NET.AssemblyInfoInputs.cache
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\obj\Debug\net9.0\.NET.AssemblyInfo.cs
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\obj\Debug\net9.0\.NET.csproj.CoreCompileInputs.cache
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\obj\Debug\net9.0\.NET.sourcelink.json
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\obj\Debug\net9.0\.NET.dll
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\obj\Debug\net9.0\refint\.NET.dll
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\obj\Debug\net9.0\.NET.pdb
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\obj\Debug\net9.0\.NET.genruntimeconfig.cache
+C:\Users\maria\OneDrive\Área de Trabalho\DIO\.NET\obj\Debug\net9.0\ref\.NET.dll
