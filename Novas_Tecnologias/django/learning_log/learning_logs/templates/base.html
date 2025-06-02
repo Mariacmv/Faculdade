@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Projeto Learning Logs</title>
+	</head>
+
+	<body>
+		<p>
+		<a href="{% url 'learning_logs:index' %}">Learning_log</a>
+		<a href="{% url 'learning_logs:topics' %}">Topics</a>
+		</p>
+	
+
+		{% block content %}
+		{% endblock content %}
+
+	</body>
+</html>
