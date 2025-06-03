@@ -1,6 +1,7 @@
 const express = require('express');
 const mustacheExpress = require('mustache-express');
 const app = express();
+const db = require('./db'); //recebe o conector do banco
 const PORT = 8080;
 
 app.engine('html', mustacheExpress());

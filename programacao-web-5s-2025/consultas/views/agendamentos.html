@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Consulta</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mt-3">
+                <h1>Agendamentos</h1>
+            </div>
+            <div class="col-3 mt-2">
+                <a href="/" class="btn btn-primary w-100">Novo Agendamento</a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Clínica</th>
+                            <th scope="col">Especialidade</th>
+                            <th scope="col">Observação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#agendamentos}}
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>{{nome}}</td>
+                            <td>{{clinica}}</td>
+                            <td>{{especialidade}}</td>
+                            <td>{{observacao}}</td>
+                            <td><a class="btn btn-primary" href="/detalhar_agendamento/{{id}}">Detalhar</a></td>
+                        </tr>
+                    </tbody>
+                    {{/agendamentos}}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
