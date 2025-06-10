@@ -3,9 +3,11 @@ const express = require('express');
 const router = express.Router(); //carregando o roteador do express
 
 const agendamentoController = require('../controllers/agendamentoController') //importo o módulo que criei
+const usuarioController = require('../controllers/usuarioController');
 
-router.get('/', agendamentoController.getIndexView); //associo a rota a função que está na controller
-router.post('/agendar_consulta', agendamentoController.postAgendarConsulta);
-router.get('/agendamentos', agendamentoController.getAgendamentosView);
+//adiciona também a função de verificar autenticação do usuário
+router.get('/', usuarioController.verificarAutenticacao, agendamentoController.getIndexView); //associo a rota a função que está na controller
+router.get('/agendamentos', usuarioController.verificarAutenticacao, agendamentoController.getAgendamentosView);
+router.post('/agendar_consulta', usuarioController.verificarAutenticacao, agendamentoController.postAgendarConsulta);
 
 module.exports = router; //exporto o roteador porque o uso em outros arquivos

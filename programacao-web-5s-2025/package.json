@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Mariacmv/programacao-web-5s-2025#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-session": "^1.17.2"
   }
 }
