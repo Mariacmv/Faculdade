@@ -17,7 +17,7 @@ function postAgendarConsulta(req, res){
             res.redirect('/agendamentos');
         });
     }else{
-        res.render('index.html', (campos_invalidos, dados_consulta));
+        res.render('index.html', {campos_invalidos, dados_consulta});
     }
 }
 
