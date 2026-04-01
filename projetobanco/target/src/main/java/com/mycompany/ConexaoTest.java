@@ -1,0 +1,18 @@
+package com.mycompany.projetobanco;
+
+import org.junit.jupiter.api.Test;
+import java.sql.Connection;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+public class ConexaoTest {
+
+    @Test
+    public void testeConexao() {
+
+        Connection conn = Conexao.conectar();
+
+        assertNotNull(conn);
+
+    }
+
+}
