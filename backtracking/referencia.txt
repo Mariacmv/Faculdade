@@ -1,0 +1,2 @@
+https://pt.slideshare.net/slideshow/problema-das-n-rainhas-backtracking/54621759
+codigo-referencia: https://gist.github.com/marcoscastro/501e816d6bb42a104eba
