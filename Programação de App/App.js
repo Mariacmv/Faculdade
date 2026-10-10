@@ -1,110 +1,124 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, Keyboard, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import Input from './src/components/Input';
+import Button from './src/components/Button';
+import { FlatList } from './react-native/types_generated/index';
+import { useState } from './react';
 
 export default function App() {
-  function fecharTeclado() {
-    Keyboard.dismiss()
+  const [list, setList] = useState([])
+  const [inputValue, setInputValue] = useState('');
+
+  function handleAddItem(){
+    setList([...list, inputValue])
+    setInputValue(''); //limpar o input 
   }
 
+
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="light" />
-
-      <Text style={styles.title}>Perfil</Text>
-
-      <View style={styles.main}>
-        <TouchableOpacity activeOpacity={0.6} //torna clicável e ajusta a transparência do clique
-        style={styles.btnAvatar}> 
-          <Image
-            source={{ uri: 'https://static.wikia.nocookie.net/duskwoodmystery/images/c/ca/FTX6P9vW_400x400.jpg/revision/latest/thumbnail/width/360/height/360?cb=20250720171506' }}
-            style={styles.avatar}
-          />
-          <Text style={styles.txtAlterarFoto}>Alterar foto</Text>
-        </TouchableOpacity>
-        <View style={styles.inputsContainer}>
-          <Text style={styles.label}>Alterar senha</Text>
-          <TextInput 
-            style={styles.input}
-            placeholder='Nome'
-            placeholderTextColor='#7C7C8A'
-          /> //caixa de input. Fecha nele mesmo, mesma coisa com o image
-          <TextInput 
-            style={[styles.input, styles.inputDisable]}
-            defaultValue='maria@gmail.com'
-            editable={false}
-          /> //shift + alt + seta pra baixo copia e cola na linha de baixo
-        </View>
-
-        <View style={styles.inputsContainer}>
-          <TextInput 
-            style={styles.input}
-            placeholder='Nome'
-            placeholderTextColor='#7C7C8A'
-            secureTextEntry
-            selectionColor='#00B37E'
-          /> 
-        </View>
-
-        <TouchableOpacity>
-          <Text>Atualizar</Text>
-        </TouchableOpacity>
-
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <View style={styles.header}>
+        <Image source={require('./src/assets/logo.png')} />
       </View>
-    </SafeAreaView>
+
+      <View style={styles.inputContainer}>
+        <Input />
+        <Button />
+      </View>
+
+      <View style={styles.itemsCount}>
+        <View style={styles.itemCount}>
+          <Text style={styles.createdText}>Criadas</Text>
+
+          <View style={styles.badge}>
+            <Text style={styles.itemsNumber}>0</Text>
+          </View>
+        </View>
+
+        <View style={styles.itemCount}>
+          <Text style={styles.concludedText}>Concluídas</Text>
+
+          <View style={styles.badge}>
+            <Text style={styles.itemsNumber}>0</Text>
+          </View>
+        </View>
+      </View>
+
+    <FlatList
+      data={[1,2,'teste']}
+      keyExtractor={(item) => item.toString()}
+      renderItem={({ item }) => (
+        <Item titulo={item} />
+      )}
+      style={{
+        backgroundColor: 'white'
+      }}
+      contentContainerStyle={{
+        padding: 16,
+        gap: 8,
+      }}
+    />
+
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#202024',
-    alignItems: 'center',
+    backgroundColor: '#0a0a0a',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: '500',
-    color: '#fff',
-    marginVertical: 24, // cima/baixo
-  },
-  main: {
-    alignItems: 'center',
-    backgroundColor: '#121214',
-    flex: 1, // ocupa todo espaço disponivel em tela
+  header: {
+    backgroundColor: '#181818',
     width: '100%',
-    paddingVertical: 24, // espaço interno cima/baixo
-    paddingHorizontal: 40,
-  },
-  btnAvatar: {
+    height: 200,
+    justifyContent: 'center',
     alignItems: 'center',
-    gap: 12,
   },
-  avatar: {
-    width: 148,
-    height: 148,
-    borderRadius: 148,
-    borderWidth: 2,
-    borderColor: '#323238',
+  inputContainer: {
+    padding: 16,
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 4,
+    marginTop: -44,
   },
-  txtAlterarFoto: {
-    color: '#00B37E',
+  itemsCount: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: 16,
+    marginTop: 32,
+    borderBottomWidth: 1,
+    borderBottomColor: '#333',
+    paddingBottom: 20,
+  },
+  itemCount: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  createdText: {
     fontSize: 16,
+    color: '#00cbce',
     fontWeight: 'bold',
   },
-  input: {
-    backgroundColor: '#3939C',
-    height: 56,
-    width: '100%',
-    borderRadius: 8, // arredonda bordas
+  badge: {
+    backgroundColor: '#333',
+    borderRadius: 12,
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+  },
+  itemsNumber: {
+    fontSize: 14,
+    fontWeight: 'bold',
     color: '#fff',
+  },
+  concludedText: {
     fontSize: 16,
-    paddingLeft: 16, // espaço interno na lateral esquerda
-  },
-  inputDisable: {
-    backgroundColor: '#202024',
-    color: '#666',
-  },
-  inputsContainer: {
-
+    color: '#00a3ed',
+    fontWeight: 'bold',
   },
 });
